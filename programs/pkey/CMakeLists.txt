@@ -58,6 +58,9 @@ target_link_libraries(pk_encrypt mbedtls)
 add_executable(pk_decrypt pk_decrypt.c)
 target_link_libraries(pk_decrypt mbedtls)
 
-install(TARGETS dh_client dh_genprime dh_server key_app mpi_demo rsa_genkey rsa_sign rsa_verify rsa_encrypt rsa_decrypt pk_encrypt pk_decrypt pk_sign pk_verify gen_key
+add_executable(own_gen_key own_gen_key.c)
+target_link_libraries(own_gen_key mbedtls)
+
+install(TARGETS dh_client dh_genprime dh_server key_app mpi_demo rsa_genkey rsa_sign rsa_verify rsa_encrypt rsa_decrypt pk_encrypt pk_decrypt pk_sign pk_verify gen_key own_gen_key
         DESTINATION "bin"
         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
