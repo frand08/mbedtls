@@ -359,10 +359,10 @@ int main( int argc, char *argv[] )
             goto usage;
           }
           else {
-            for (i = 0; i < 16; i++) {
-              aux[0] = q[i*2];
-              aux[1] = q[i*2+1];
-              secret_md5[i] = (uint8_t)strtoul((const char*)&aux, NULL, 16);
+            for (int j = 0; j < 16; j++) {
+              aux[0] = q[j*2];
+              aux[1] = q[j*2+1];
+              secret_md5[j] = (uint8_t)strtoul((const char*)&aux, NULL, 16);
             }
           }
         }        
